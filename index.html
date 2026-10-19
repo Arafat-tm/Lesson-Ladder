@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LESSON LADDER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside>
+    <h2>🎓 LESSON<br>LADDER</h2>
+    <p>YOUR LEARNING SPACE</p>
+
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('lessons')">📚 My Lessons</button>
+    <button onclick="showPage('goals')">🎯 Study Goals</button>
+    <button onclick="showPage('tasks')">✅ My Tasks</button>
+    <button onclick="showPage('progress')">🌟 My Progress</button>
+    <button onclick="showPage('timer')">⏱️ Study Timer</button>
+  </aside>
+
+  <main>
+    <button id="nightToggle" onclick="nightMode()">🌙 Night Mode</button>
+
+    <div id="home" class="page active">
+      <h1>Welcome, Future Star! ✨</h1>
+      <p>Small steps today, big achievements tomorrow.</p>
+
+      <div class="cards">
+        <button onclick="showPage('lessons')">📚<br>My Lessons</button>
+        <button onclick="showPage('goals')">🎯<br>Study Goals</button>
+        <button onclick="showPage('tasks')">✅<br>My Tasks</button>
+        <button onclick="showPage('progress')">🌟<br>My Progress</button>
+        <button onclick="showPage('timer')">⏱️<br>Study Timer</button>
+      </div>
+      <h2>💜 Believe in yourself!</h2>
+    </div>
+
+    <div id="lessons" class="page">
+      <h1>📚 My Lessons</h1>
+      <p>Keep all your lessons organized.</p>
+      <input id="lessonInput" placeholder="Enter a lesson">
+      <button onclick="addItem('lessonInput','lessonList')">+ Add Lesson</button>
+      <ul id="lessonList"></ul>
+    </div>
+
+    <div id="goals" class="page">
+      <h1>🎯 Study Goals</h1>
+      <p>Dream big and take small steps.</p>
+      <input id="goalInput" placeholder="Enter a study goal">
+      <button onclick="addItem('goalInput','goalList')">+ Add Goal</button>
+      <ul id="goalList"></ul>
+    </div>
+
+    <div id="tasks" class="page">
+      <h1>✅ My Tasks</h1>
+      <p>Click a task to complete it. Press × to remove it.</p>
+      <input id="taskInput" placeholder="Enter homework">
+      <button onclick="addItem('taskInput','taskList')">+ Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+
+    <div id="progress" class="page">
+      <h1>🌟 My Progress</h1>
+      <p id="progressText">0% completed</p>
+      <progress id="progressBar" value="0" max="100"></progress>
+      <p>Every completed task is a win! 🎉</p>
+    </div>
+
+    <div id="timer" class="page">
+      <h1>⏱️ Study Timer</h1>
+      <p>Focus on one thing at a time.</p>
+      <h2 id="clock">25:00</h2>
+      <button onclick="startTimer()">▶ Start</button>
+      <button onclick="pauseTimer()">⏸ Pause</button>
+      <button onclick="resetTimer()">↻ Reset</button>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
